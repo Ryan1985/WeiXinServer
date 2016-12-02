@@ -92,6 +92,8 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\WeiUI\weui.css" />
+    <Content Include="Scripts\WeiUI\weui.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,7 +103,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ContentXmlModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeiXinBiz\WeiXinBiz.csproj">
+      <Project>{5a176664-eb67-4d32-8ea4-d700ee5450e1}</Project>
+      <Name>WeiXinBiz</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

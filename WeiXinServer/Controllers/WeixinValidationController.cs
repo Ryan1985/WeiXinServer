@@ -10,7 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Results;
 using System.Xml.Serialization;
 using EasyEncryption;
-using WeiXinServer.Models;
+using WeiXinBiz;
 
 namespace WeiXinServer.Controllers
 {
@@ -56,19 +56,31 @@ namespace WeiXinServer.Controllers
                 var result =
                     (ContentXmlModel)serializer.Deserialize(new MemoryStream(Encoding.UTF8.GetBytes(postContent)));
 
+                var returnContent = "success";
+                switch (result.MsgType)
+                {
+                    case "event"://关注事件
+                    {
+                        File.AppendAllText(@"D:\WebSites\WeiXinServer\log.txt", postContent+"\r\n");
+                        if (result.Event == "subscribe")
+                        {
+                            returnContent=Subscribe.GetReturnString(result);
 
-                var sbReturn = new StringBuilder("<xml>" + "\n");
-                sbReturn.AppendFormat(@"<ToUserName><![CDATA[{0}]]></ToUserName>" + "\n", result.FromUserName);
-                sbReturn.AppendFormat(@"<FromUserName><![CDATA[{0}]]></FromUserName>" + "\n", result.ToUserName);
-                sbReturn.AppendFormat(@"<CreateTime>{0}</CreateTime>" + "\n", CommonUtil.CommonUtil.toTime(DateTime.Now));
-                sbReturn.AppendFormat(@"<MsgType><![CDATA[{0}]]></MsgType>" + "\n", result.MsgType);
-                sbReturn.AppendFormat(@"<Content><![CDATA[{0}]]></Content>" + "\n", "<a href=\"http://www.baidu.com?r=" + result.FromUserName + "\">订单管理</a>");
-                sbReturn.Append("</xml>");
+                        }
+                    }break;
+                    case "text"://普通消息
+                        {
+                            File.AppendAllText(@"D:\WebSites\WeiXinServer\log.txt", postContent + "\r\n");
+                        returnContent = PlainContent.GetReturnString(result);
+                    }break;
+                }
 
+
+                File.AppendAllText(@"D:\WebSites\WeiXinServer\log.txt", returnContent + "\r\n");
 
                 var responseMessage = new HttpResponseMessage
                 {
-                    Content = new StringContent(sbReturn.ToString(), Encoding.GetEncoding("UTF-8"), "text/plain")
+                    Content = new StringContent(returnContent, Encoding.GetEncoding("UTF-8"), "text/plain")
                 };
 
                 return responseMessage;

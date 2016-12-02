@@ -1,0 +1,9 @@
+G:\Github\Repos\WeiXinServer\WeiXinServer\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+G:\Github\Repos\WeiXinServer\WeiXinServer\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+G:\Github\Repos\WeiXinServer\WeiXinServer\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+G:\Github\Repos\WeiXinServer\WeiXinServer\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+G:\Github\Repos\WeiXinServer\WeiXinServer\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+G:\Github\Repos\WeiXinServer\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+G:\Github\Repos\WeiXinServer\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+G:\Github\Repos\WeiXinServer\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+G:\Github\Repos\WeiXinServer\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

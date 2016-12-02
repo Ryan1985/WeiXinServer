@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WeiXinServer.Models
+﻿namespace WeiXinBiz
 {
     public class ContentXmlModel
     {
@@ -14,5 +9,6 @@ namespace WeiXinServer.Models
         public string MsgType;
         public string Content;
         public string MsgId;
+        public string Event;
     }
 }
