@@ -80,6 +80,7 @@
   <ItemGroup>
     <Content Include="App\app.js" />
     <Content Include="Global.asax" />
+    <Content Include="index - 复制.html" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -90,12 +91,14 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\WeiUI\weui.css" />
     <Content Include="Scripts\WeiUI\weui.min.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="CommonUtil\CommonUtil.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\WeixinValidationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
